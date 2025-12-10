@@ -2,10 +2,13 @@
 const inventario =["camara", "tripode", "microfono"];
 
 //creamos una funcion
-function agregarInventario (lista, nuevoItem){
+function agregarInventario (lista, ...nuevoItem){
     //creamos una nueva lista usando spread
-    let nuevaLista = [...lista, nuevoItem];
+    let nuevaLista = [...lista, ...nuevoItem];
 
     //imprimimos el mensaje con la cantidad de items
-    console.log(`El inventario ahora tiene ${nuevaLista.length} ítems.`)
+    return `El inventario ahora tiene ${nuevaLista.length} ítems, \nlos cuales son: \n${nuevaLista}.`
 }
+
+resultado = agregarInventario(inventario, "Steamdek", "Teclado Gamer", "Monitor")
+console.log(resultado)
